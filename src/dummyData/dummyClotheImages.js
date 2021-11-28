@@ -1,0 +1,35 @@
+export const clothImages = [
+  {
+    image:
+      "https://purepng.com/public/uploads/large/purepng.com-women-dressclothingwomen-dressfashion-women-dress-cloth-apparel-631522326975ia8xr.png",
+  },
+  {
+    image:
+      "https://purepng.com/public/uploads/large/purepng.com-black-t-shirtt-shirtfabrict-shapegramnetsblack-14215264292893onlg.png",
+  },
+  {
+    image:
+      "https://i.pinimg.com/originals/81/28/be/8128bec5bd445ef1b1d9801423845a05.png",
+  },
+  {
+    image:
+      "https://cdn130.picsart.com/264544513003212.png",
+  },
+  {
+    image:
+      "https://www.pngplay.com/wp-content/uploads/2/Dress-Shirt-PNG-Free-File-Download.png",
+  },
+  {
+    image:
+      "https://www.pngall.com/wp-content/uploads/2016/04/T-Shirt-PNG.png",
+  },
+  {
+    image:
+      "https://www.pngarts.com/files/1/T-Shirt-PNG-Transparent-Image.png",
+  },
+  {
+    image:
+      "https://purepng.com/public/uploads/large/red-t-shirt-jrf.png",
+  }
+];
+

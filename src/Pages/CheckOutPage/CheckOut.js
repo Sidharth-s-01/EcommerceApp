@@ -50,14 +50,14 @@ function CheckOut() {
       const response = await axios.get(`${API}products/find/${id}`, {
         headers: {
           token:
-            "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWIxZDY5YzMxYzUzMjNlOTJjZmRiNjciLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2NDA0NDUxODQsImV4cCI6MTY0MDcwNDM4NH0.O-3aTFXBFP6nqCIDhG60ZqtFQTmxhruMS2j85RMENtc",
+            "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWIxZDY5YzMxYzUzMjNlOTJjZmRiNjciLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2NDA5ODY0NTgsImV4cCI6MTY3MjUyMjQ1OH0.GR-U2zNQLuvf63Y5lJUTPuyBSBowTwfZs8qj40oRBKw",
         },
       });
       setCartItems((prev) => [...prev, response.data]);
     };
 
     //  console.log(cartInfo[0].products)
-    cartInfo[0].products.map((eachProduct) => {
+    cartInfo[0]?.products?.map((eachProduct) => {
       getProduct(eachProduct.productId);
       // console.log(eachProduct.productId)
     });

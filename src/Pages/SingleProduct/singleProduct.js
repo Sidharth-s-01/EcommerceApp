@@ -15,38 +15,38 @@ import "./singlep.css";
 function SingleProductPage() {
   const [size, setsize] = useState("");
   const [quantity, setquantity] = useState(1);
-  const [product,setProduct]=useState({});
+  const [product, setProduct] = useState({});
   const params = useParams();
   const dispatch = useDispatch();
-  const {cartInfo}=useSelector(state=>state.cart)
+  const { cartInfo } = useSelector((state) => state.cart);
 
   useEffect(() => {
     const getProduct = async () => {
       const response = await axios.get(`${API}products/find/${params.id}`, {
         headers: {
           token:
-            "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWIxZDY5YzMxYzUzMjNlOTJjZmRiNjciLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2NDA0NDUxODQsImV4cCI6MTY0MDcwNDM4NH0.O-3aTFXBFP6nqCIDhG60ZqtFQTmxhruMS2j85RMENtc",
+          "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWIxZDY5YzMxYzUzMjNlOTJjZmRiNjciLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2NDA5ODY0NTgsImV4cCI6MTY3MjUyMjQ1OH0.GR-U2zNQLuvf63Y5lJUTPuyBSBowTwfZs8qj40oRBKw",
         },
       });
-      response&&setProduct(response.data)
+      response && setProduct(response.data);
       console.log(response.data);
     };
     getProduct();
-  },[]);
+  }, []);
 
   const handleSize = (e) => {
     setsize(e.target.innerText);
   };
 
-  const handleAddToCart=()=>{
-    const productDetails={
-      productId:params.id,
-      quantity:quantity
-    }
+  const handleAddToCart = () => {
+    const productDetails = {
+      productId: params.id,
+      quantity: quantity,
+    };
     dispatch(addtoCart(productDetails));
-    console.log("clicked")
-    console.log(cartInfo[0])
-  }
+    console.log("clicked");
+    console.log(cartInfo[0]);
+  };
 
   return (
     <div className="sProductpageMain">
@@ -59,14 +59,15 @@ function SingleProductPage() {
         </div>
         <div className="spRight">
           <h2 className="spHeading">{product?.productName}</h2>
-          <p>
-            {product?.description}
-          </p>
-          <h2 className="price">{"$ "+product.price}</h2>
+          <p>{product?.description}</p>
+          <h2 className="price">{"$ " + product.price}</h2>
           <div className="spColorAndSize">
             <div className="colorPallete">
               <span>Color</span>
-              <div className="clpall1" style={{backgroundColor:product.color}}></div>
+              <div
+                className="clpall1"
+                style={{ backgroundColor: product.color }}
+              ></div>
               {/* <div className="clpall2"></div>
               <div className="clpall3"></div> */}
 
@@ -129,7 +130,7 @@ function SingleProductPage() {
                 });
               }}
             />
-            <button onClick={handleAddToCart} >Add to Cart</button>
+            <button onClick={handleAddToCart}>Add to Cart</button>
           </div>
           <div className="addtoCartButtonForMobile">
             <button onClick={handleAddToCart}>Add to Cart</button>

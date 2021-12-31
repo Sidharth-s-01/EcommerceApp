@@ -92,7 +92,7 @@ function Catergories() {
       const response = await axios.get(API + "products/allproducts", {
         headers: {
           token:
-            "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWIxZDY5YzMxYzUzMjNlOTJjZmRiNjciLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2NDA0NDQ5MjUsImV4cCI6MTY0MDcwNDEyNX0.asdr3DaxV4kfDBcqg1FTPG_jFJmggdBWfoWkmTONbZk",
+            "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWIxZDY5YzMxYzUzMjNlOTJjZmRiNjciLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2NDA5ODU2OTQsImV4cCI6MTY3MjUyMTY5NH0.nzZCbPqPtEQEcHXkFqCbXjH3eTfXaxeZFQ9Hzc514Z0",
         },
       });
       response.data && setAllProducts(response.data);

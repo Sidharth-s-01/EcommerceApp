@@ -21,7 +21,7 @@ export default function Home() {
       const response = await axios.get(API + "products/allproducts", {
         headers: {
           token:
-            "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWIxZDY5YzMxYzUzMjNlOTJjZmRiNjciLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2NDA0NDQ5MjUsImV4cCI6MTY0MDcwNDEyNX0.asdr3DaxV4kfDBcqg1FTPG_jFJmggdBWfoWkmTONbZk",
+            "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWIxZDY5YzMxYzUzMjNlOTJjZmRiNjciLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2NDA5ODU2OTQsImV4cCI6MTY3MjUyMTY5NH0.nzZCbPqPtEQEcHXkFqCbXjH3eTfXaxeZFQ9Hzc514Z0",
         },
       });
       response.data && setAllProducts(response.data);
@@ -31,7 +31,7 @@ export default function Home() {
       const response = await axios.get(API + "cart/find/61b0a0f51340af4c2c2689e8", {
         headers: {
           token:
-            "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWIwYTBmNTEzNDBhZjRjMmMyNjg5ZTgiLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNjQwNDU3OTc0LCJleHAiOjE2NDA3MTcxNzR9.TQDiE6BvN0vmag80gpZxbxPms8cio89SK_INCqg9-go",
+            "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWIwYTBmNTEzNDBhZjRjMmMyNjg5ZTgiLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNjQwOTg1ODM4LCJleHAiOjE2NzI1MjE4Mzh9.OgKbDeL1D2WPYNFVCYG2X3i7v7LtlJyjyAAICbOWREU",
         },
       }
       

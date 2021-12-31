@@ -1,35 +1,35 @@
 export const clothImages = [
   {
     image:
-      "https://purepng.com/public/uploads/large/purepng.com-women-dressclothingwomen-dressfashion-women-dress-cloth-apparel-631522326975ia8xr.png",
+      "https://i.pinimg.com/564x/f3/bc/c2/f3bcc29cd1809e62637d21afb2958a01.jpg",
   },
   {
     image:
-      "https://purepng.com/public/uploads/large/purepng.com-black-t-shirtt-shirtfabrict-shapegramnetsblack-14215264292893onlg.png",
+      "https://i.pinimg.com/564x/40/ad/02/40ad02fa267f602bce23f4e8e37a8451.jpg",
   },
   {
     image:
-      "https://i.pinimg.com/originals/81/28/be/8128bec5bd445ef1b1d9801423845a05.png",
+      "https://i.pinimg.com/564x/d6/57/9d/d6579d768a8a76ff572a4c1710913701.jpg",
   },
   {
     image:
-      "https://cdn130.picsart.com/264544513003212.png",
+      "https://i.pinimg.com/564x/97/3c/69/973c6990e60e7bf72d45a8b33963e651.jpg",
   },
   {
     image:
-      "https://www.pngplay.com/wp-content/uploads/2/Dress-Shirt-PNG-Free-File-Download.png",
+      "https://i.pinimg.com/564x/e6/0d/d5/e60dd543ddcd3776eee57c248a68c0c0.jpg",
   },
   {
     image:
-      "https://www.pngall.com/wp-content/uploads/2016/04/T-Shirt-PNG.png",
+      "https://i.pinimg.com/736x/f8/25/c4/f825c407b87e0dcf82130f778cf98c2c.jpg",
   },
   {
     image:
-      "https://www.pngarts.com/files/1/T-Shirt-PNG-Transparent-Image.png",
+      "https://i.pinimg.com/564x/80/62/6d/80626df7432665a5e4280714c20fdb4b.jpg",
   },
   {
     image:
-      "https://purepng.com/public/uploads/large/red-t-shirt-jrf.png",
+      "https://i.pinimg.com/564x/46/d1/36/46d13683d93166badf3ab692e4ce7166.jpg",
   }
 ];
 

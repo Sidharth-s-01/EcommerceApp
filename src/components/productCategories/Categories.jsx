@@ -11,7 +11,7 @@ function Categories() {
             <img src={category.image} alt="" />
             <div className="categoryInfo">
               <h3>{category.name}</h3>
-              <p>{category.description}</p>
+              
               <button>SHOP NOW</button>
             </div>
           </div>

@@ -1,13 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import "./navbar.css";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import SearchIcon from "@material-ui/icons/Search";
 import Button from "@material-ui/core/Button";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
+import { Dropdown } from "react-bootstrap";
+import "../../Pages/CategoriesPage/categoriesPage.css";
+import { Link } from "react-router-dom";
+import {useSelector} from "react-redux"
+
 
 function Navbar() {
+  const [size, setsize] = useState("");
+  const {cartInfo}=useSelector(state=>state.cart)
   const [anchorEl, setAnchorEl] = React.useState(null);
+
+  // console.log(cartInfo[0].products)
+  const handleSize = (e) => {
+    setsize(e.target.innerText);
+  };
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -18,44 +30,31 @@ function Navbar() {
   };
   return (
     <div className="navbarWrapper">
-      <div className="navbarLeft">
-        <div>
-          <Button
-            aria-controls="simple-menu"
-            aria-haspopup="true"
-            onClick={handleClick}
-          >
-            EN
-          
-          </Button>
-          <Menu 
-          
-            id="simple-menu"
-            anchorEl={anchorEl}
-            keepMounted
-            open={Boolean(anchorEl)}
-            onClose={handleClose}
-          >
-            <MenuItem className="menuItem"  onClick={handleClose}>ML</MenuItem>
-            <MenuItem className="menuItem" onClick={handleClose}>HD</MenuItem>
-            <MenuItem className="menuItem"onClick={handleClose}>FR</MenuItem>
-          </Menu>
-        </div>
-        <div className="searchArea">
-          
-          <input/>
-          <SearchIcon className="searchIcon"/>
-        </div>
-      </div>
       <div className="navbarCenter">
-        <h2>WOMZONE</h2>
+        <Link to="/" style={{textDecoration:"none",color:"#fff"}}>
+          <h2>WOMZONE</h2>
+        </Link>
       </div>
-      <div className="navbarRight">
-        <div className="navRightComp">Register</div>
-        <div className="navRightComp">Sign In</div>
-        <div className="navRightComp">
-          <ShoppingCartIcon className="cartIcon"/>
+      <div className="navbarLeft">
+        <div className="searchArea">
+          <input />
+          <SearchIcon className="searchIcon" />
         </div>
+      </div>
+
+      <div className="navbarRight">
+        <Link to="/register" style={{ textDecoration: "none" }}>
+          <div className="navRightComp">Register</div>
+        </Link>
+        <Link to="/login" style={{ textDecoration: "none" }}>
+          <div className="navRightComp">Sign In</div>
+        </Link>
+        <Link to="/checkout" style={{ textDecoration: "none" }}>
+          <div className="navRightComp CartComponent">
+            <div className="badge">{cartInfo[0]?.products.length}</div>
+            <ShoppingCartIcon className="cartIcon" />
+          </div>
+        </Link>
       </div>
     </div>
   );

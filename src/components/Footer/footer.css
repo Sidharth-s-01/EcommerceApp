@@ -5,13 +5,17 @@
 
 
 .footerWrapper{
-   align-items: flex-start;
-    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 400;
+    
     display: flex;
-    height: 40vh;
-    padding: 35px 5px 20px;
+   /* align-items: flex-start; */
+   flex-wrap: wrap;
+    font-family: 'Nunito Sans', sans-serif;
+    height: 45vh;
+    padding: 65px 0px 10px 15px;
     background-color: #2e8dc0;
     color: #fff;
+    text-align: left;
 }
 
 .footerLeft{
@@ -58,9 +62,10 @@
 
 
 .footerCenter h3{
-    margin: 0 0 30px 10px;
+    margin: 0 0 30px 0;
     text-align: left;
     font-size: 30px;
+    padding-left: 10px;
 }
 
 .footerRight{
@@ -70,7 +75,7 @@
 }
 
 .footerRight h3{
-    font-size: 32.5px;
+    font-size: 30px;
     margin: 0 10px 30px 0;
 
 }
@@ -78,7 +83,7 @@
 .address{
     display: flex;
     align-items: center;
-    font-size: 20px;
+    font-size: 18px;
     margin-bottom:15px ;
 }
 
@@ -92,4 +97,59 @@
     height:25px;
     border-radius: 5px;
     cursor: pointer;
+}
+
+
+@media screen and (max-width: 430px) {
+    .footerWrapper{
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: auto;
+        width: 100%;
+        padding:40px 0;
+    }
+
+    .footerLeft,.footerRight,.footerCenter{
+        padding-left: 15px;
+        /* margin-bottom: ; */
+    }
+
+   .footerLeft h2{
+       margin-bottom: 10px;
+       /* text-align: center; */
+   }
+
+    .footerLeft,.footerRight,.footerCenter{
+        margin:10px 0 0;
+    }
+
+    .footerCenter h3{
+        margin-top: 20px;
+        margin-bottom: 10px;
+        padding-left: 0;
+    }
+
+    .linkColumn{
+        width: 100%;
+        margin: 0;
+
+    }
+
+    .eachLink{
+        font-size: 17px;
+    }
+    
+    .footerLeft p{
+        font-size: 17px;
+    }
+
+    .footerRight h3{
+        margin-bottom: 10px;
+    }
+
+    .address{
+        font-size: 17px;
+    }
+
 }

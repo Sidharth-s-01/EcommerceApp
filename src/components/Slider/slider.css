@@ -136,3 +136,9 @@
     transition-duration: 1s;
     transform: scale(1.08);
   }
+
+  @media screen and (max-width: 430px) {
+      .MainSlider{
+          display: none;
+      }
+  }

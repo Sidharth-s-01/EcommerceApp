@@ -123,6 +123,8 @@
     display: flex;
     width: 100%;
     justify-content: right;
+    align-items: center;
+    text-align: right;
     cursor: pointer;
     color: #2e8dc0;
     /* color: #fff; */
@@ -146,7 +148,7 @@
 
 @media screen and (max-width: 380px) {
     .loginWrapper {
-        background-image: url("https://i.pinimg.com/750x/65/0f/a9/650fa97f7a0c7c43dccafd8fc5539a11.jpg");
+        background-image: url("https://i.pinimg.com/originals/4b/da/02/4bda027a6f6f9e262e7439f6ab442550.jpg");
         background-color: rgba(0, 0, 0, 0.8);
 
 
@@ -155,7 +157,7 @@
     .loginMain {
         height: 60%;
         width: 80%;
-        border-radius: 15px;
+        /* border-radius: 15px; */
     }
 
     .loginMain h1 {
@@ -167,7 +169,8 @@
     .signUpMain {
         height: 70%;
         width: 80%;
-        border-radius: 15px;
+        text-align: right;
+        /* border-radius: 15px; */
     }
 
     .signUpMain h1 {

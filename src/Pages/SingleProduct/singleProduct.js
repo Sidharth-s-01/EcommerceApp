@@ -25,7 +25,7 @@ function SingleProductPage() {
       const response = await axios.get(`${API}products/find/${params.id}`, {
         headers: {
           token:
-          "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWIxZDY5YzMxYzUzMjNlOTJjZmRiNjciLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2NDA5ODY0NTgsImV4cCI6MTY3MjUyMjQ1OH0.GR-U2zNQLuvf63Y5lJUTPuyBSBowTwfZs8qj40oRBKw",
+            "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWIxZDY5YzMxYzUzMjNlOTJjZmRiNjciLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2NDA5ODY0NTgsImV4cCI6MTY3MjUyMjQ1OH0.GR-U2zNQLuvf63Y5lJUTPuyBSBowTwfZs8qj40oRBKw",
         },
       });
       response && setProduct(response.data);
@@ -132,9 +132,9 @@ function SingleProductPage() {
             />
             <button onClick={handleAddToCart}>Add to Cart</button>
           </div>
-          <div className="addtoCartButtonForMobile">
-            <button onClick={handleAddToCart}>Add to Cart</button>
-          </div>
+        </div>
+        <div className="addtoCartButtonForMobile">
+          <button onClick={handleAddToCart}>Add to Cart</button>
         </div>
       </div>
 

@@ -8,54 +8,47 @@ import login from "../../redux/apicalls";
 import API from "../../API/api";
 import axios from "axios";
 import "./login.css";
-
+import getCart from "../../redux/cartcalls";
 function Login() {
-
-  const dispatch=useDispatch()
-  const {userInfo,error,isFetching,isLoggedIn}=useSelector(state=>state.user)
-  const username=useRef()
-  const password=useRef()
-  const navigate=useNavigate()
-  const handleLogin=(e)=>{
+  const dispatch = useDispatch();
+  const { userInfo, error, isFetching, isLoggedIn } = useSelector(
+    (state) => state.user
+  );
+  const username = useRef();
+  // const history=useHistory()
+  const password = useRef();
+  const navigate = useNavigate();
+  const handleLogin = (e) => {
     e.preventDefault();
-    const userDetails={
-      username:username.current.value,
-      password:password.current.value
+    const userDetails = {
+      username: username.current.value,
+      password: password.current.value,
+    };
+    try {
+      login(userDetails, dispatch);
+      navigate("/");
+    } catch (err) {
+      navigate("/login");
     }
-    try{
-     
-      const getCart=async()=>{
-        const response = await axios.get(API + "cart/find/"+userInfo?._id, {
-          headers: {
-            token:
-              "bearer "+userInfo?.accessToken,
-          },
-        }
-        
-        );
-        console.log(response.data);
-        dispatch(setCart(response.data));
-        navigate("/")
-      }
-      login(userDetails,dispatch);
-      getCart();
-      
-      
-     
-    }catch(err){
-      navigate("/login")
-    }
-    
-  }
+  };
 
   return (
     <div className="loginWrapper">
       <div className="loginMain">
         <h1>WOMZONE</h1>
-        <input placeholder="Username" type="text" ref={username}/>
-        <input placeholder="Password" type="password" ref={password}/>
-        <button className="buttonLoginAndRegister" onClick={handleLogin}>{isFetching ?  <CircularProgress color="white" size="10px" />: "Login"}</button>
-        <Link to="/register" style={{textDecoration:"none", color:"black",width:"100%"}}>
+        <input placeholder="Username" type="text" ref={username} />
+        <input placeholder="Password" type="password" ref={password} />
+        <button className="buttonLoginAndRegister" onClick={handleLogin}>
+          {isFetching ? (
+            <CircularProgress color="white" size="10px" />
+          ) : (
+            "Login"
+          )}
+        </button>
+        <Link
+          to="/register"
+          style={{ textDecoration: "none", color: "black", width: "100%" }}
+        >
           <div className="signUp">Sign Up</div>
         </Link>
       </div>

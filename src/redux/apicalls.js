@@ -2,6 +2,7 @@ import { loginStart, loginError, loginSucess } from "./userRedux";
 import API from "../API/api";
 import { useDispatch } from "react-redux";
 import axios from "axios";
+import getCart from "./cartcalls";
 
 
 const login = async (userDetails,dispatch) => {
@@ -13,6 +14,7 @@ const login = async (userDetails,dispatch) => {
     });
     if (res.data) {
       dispatch(loginSucess(res.data));
+      getCart(res.data._id, dispatch,res.data.accessToken);
     } else {
       dispatch(loginError());
     }

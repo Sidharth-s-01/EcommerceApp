@@ -29,7 +29,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/categories" element={<Categories />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/login" element={isLoggedIn?<Home />:<Login/>} />
 
           <Route path="/register" element={<Register />} />
           <Route path="/product/:id" element={<SingleProductPage />} />

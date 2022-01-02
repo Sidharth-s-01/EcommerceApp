@@ -17,7 +17,7 @@ function Navbar() {
   const {isLoggedIn}=useSelector(state=>state.user)
   const [anchorEl, setAnchorEl] = React.useState(null);
 
-  console.log()
+  // console.log(cartInfo?.products.length)
   const handleSize = (e) => {
     setsize(e.target.innerText);
   };
@@ -52,7 +52,7 @@ function Navbar() {
         </Link>
         <Link to="/checkout" style={{ textDecoration: "none" }}>
           <div className="navRightComp CartComponent">
-           {isLoggedIn && <div className="badge">{cartInfo && cartInfo[0].products?.length}</div>}
+           <div className="badge">{cartInfo && cartInfo?.products?.length}</div>
             <ShoppingCartIcon className="cartIcon" />
           </div>
         </Link>

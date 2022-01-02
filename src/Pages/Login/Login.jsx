@@ -36,15 +36,18 @@ function Login() {
     <div className="loginWrapper">
       <div className="loginMain">
         <h1>WOMZONE</h1>
-        <input placeholder="Username" type="text" ref={username} />
-        <input placeholder="Password" type="password" ref={password} />
-        <button className="buttonLoginAndRegister" onClick={handleLogin}>
-          {isFetching ? (
-            <CircularProgress color="white" size="10px" />
-          ) : (
-            "Login"
-          )}
-        </button>
+        <form onSubmit={handleLogin}>
+          <input placeholder="Username" type="text" ref={username} />
+          <input placeholder="Password" type="password" ref={password} />
+          <button className="buttonLoginAndRegister" type="submit">
+            {isFetching ? (
+              <CircularProgress color="white" size="10px" />
+            ) : (
+              "Login"
+            )}
+          </button>
+        </form>
+
         <Link
           to="/register"
           style={{ textDecoration: "none", color: "black", width: "100%" }}

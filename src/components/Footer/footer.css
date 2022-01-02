@@ -6,7 +6,7 @@
 
 .footerWrapper{
     font-weight: 400;
-    
+    margin-top: 20px;
     display: flex;
    /* align-items: flex-start; */
    flex-wrap: wrap;

@@ -24,6 +24,7 @@
     justify-content: center;
     align-items: center;
     width: 400px;
+
     height: 450px;
     /* border-radius: 16px; */
     padding: 30px 30px 30px;
@@ -155,14 +156,16 @@
     }
 
     .loginMain {
-        height: 60%;
+        height: 48%;
         width: 80%;
+        padding: 20px;
         /* border-radius: 15px; */
     }
 
     .loginMain h1 {
         font-size: 27.5px;
         width: 100%;
+        margin-bottom: 30px !important;
         height: 50px;
     }
 

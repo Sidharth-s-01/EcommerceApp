@@ -57,7 +57,7 @@ function CheckOut() {
     };
 
     //  console.log(cartInfo[0].products)
-    cartInfo[0]?.products?.map((eachProduct) => {
+    cartInfo?.products?.map((eachProduct) => {
       getProduct(eachProduct.productId);
       // console.log(eachProduct.productId)
     });
@@ -66,7 +66,7 @@ function CheckOut() {
   useEffect(() => {
     getCartItems();
     console.log(cartItems)
-  }, [cartInfo[0]]);
+  }, [cartInfo]);
 
   console.log(cartInfo);
   const EachCartProduct = ({ eachItem, index }) => {
@@ -106,7 +106,7 @@ function CheckOut() {
                   }}
                 />
                 <div className="quantity">
-                  {cartInfo[0] && cartInfo[0]?.products[index]?.quantity}
+                  {cartInfo && cartInfo?.products[index]?.quantity}
                 </div>
                 <Add
                   className="iconCartPage"

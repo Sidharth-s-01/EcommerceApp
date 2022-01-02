@@ -5,7 +5,7 @@ import NewsLetter from "../../components/newsLetter/NewsLetter";
 import Footer from "../../components/Footer/Footer";
 import { Dropdown } from "react-bootstrap";
 import { Add, Remove, SingleBedRounded } from "@material-ui/icons";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import API from "../../API/api";
 import { useDispatch, useSelector } from "react-redux";
@@ -19,7 +19,8 @@ function SingleProductPage() {
   const params = useParams();
   const dispatch = useDispatch();
   const { cartInfo } = useSelector((state) => state.cart);
-
+  const { isLoggedIn } = useSelector((state) => state.user);
+  const navigate = useNavigate();
   useEffect(() => {
     const getProduct = async () => {
       const response = await axios.get(`${API}products/find/${params.id}`, {
@@ -39,13 +40,17 @@ function SingleProductPage() {
   };
 
   const handleAddToCart = () => {
-    const productDetails = {
-      productId: params.id,
-      quantity: quantity,
-    };
-    dispatch(addtoCart(productDetails));
-    console.log("clicked");
-    console.log(cartInfo[0]);
+    if (isLoggedIn) {
+      const productDetails = {
+        productId: params.id,
+        quantity: quantity,
+      };
+      dispatch(addtoCart(productDetails));
+      console.log("clicked");
+      console.log(cartInfo[0]);
+    } else {
+      navigate("/login");
+    }
   };
 
   return (
@@ -134,6 +139,28 @@ function SingleProductPage() {
           </div>
         </div>
         <div className="addtoCartButtonForMobile">
+          <div className="quantitySectionMobile">
+            <Remove
+              className="iconProductPage"
+              onClick={() => {
+                setquantity((prev) => {
+                  if (prev != 1) {
+                    return prev - 1;
+                  }
+                  return 1;
+                });
+              }}
+            />
+            <div className="quantityProductPage">{quantity}</div>
+            <Add
+              className="iconProductPage"
+              onClick={() => {
+                setquantity((prev) => {
+                  return prev + 1;
+                });
+              }}
+            />
+          </div>
           <button onClick={handleAddToCart}>Add to Cart</button>
         </div>
       </div>

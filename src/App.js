@@ -18,8 +18,11 @@ import {
 } from "react-router-dom";
 import Payment from "./Pages/Payment/payment";
 import Success from "./Pages/Payment/success";
+import { useSelector } from "react-redux";
 
 function App() {
+
+  const {userInfo,isLoggedIn}=useSelector(state=>state.user);
   return (
     <Router>
       <>
@@ -31,8 +34,8 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/product/:id" element={<SingleProductPage />} />
 
-          <Route path="/checkout" element={<CheckOut />} />
-          <Route path="/payment" element={<Payment />} />
+          <Route path="/checkout" element={isLoggedIn?<CheckOut />:<Login />} />
+          <Route path="/payment" element={isLoggedIn?<Payment />:<Login />} />
           <Route path="/paymentsuccess" element={<Success />} />
 
         </Routes>

@@ -11,6 +11,8 @@ import {Link } from "react-router-dom"
 
 
 function ShoppingItems({ AllProducts }) {
+
+  
   return (
     <div className="ItemsWrapper">
       {AllProducts.map((product) => {

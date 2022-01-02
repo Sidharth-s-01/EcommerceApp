@@ -50,7 +50,7 @@ function CheckOut() {
       const response = await axios.get(`${API}products/find/${id}`, {
         headers: {
           token:
-            "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWIxZDY5YzMxYzUzMjNlOTJjZmRiNjciLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2NDA5ODY0NTgsImV4cCI6MTY3MjUyMjQ1OH0.GR-U2zNQLuvf63Y5lJUTPuyBSBowTwfZs8qj40oRBKw",
+            "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWIxZDY5YzMxYzUzMjNlOTJjZmRiNjciLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2NDA5ODU2OTQsImV4cCI6MTY3MjUyMTY5NH0.nzZCbPqPtEQEcHXkFqCbXjH3eTfXaxeZFQ9Hzc514Z0",
         },
       });
       setCartItems((prev) => [...prev, response.data]);
@@ -65,30 +65,30 @@ function CheckOut() {
 
   useEffect(() => {
     getCartItems();
-    // console.log(cartItems)
+    console.log(cartItems)
   }, [cartInfo[0]]);
 
   console.log(cartInfo);
-  const EachCartProduct = ({ eachItem ,index}) => {
+  const EachCartProduct = ({ eachItem, index }) => {
     return (
       <div className="cartProductWrapper">
         <div className="cartImage">
-          <img src={eachItem.image} />
+          <img src={eachItem?.image} />
         </div>
         <div className="productDetailsWrapper">
           <div className="productDetails">
             <div className="productDetailsLeft">
               <div>
                 <b>Product: </b>
-                <span>{eachItem.productName}</span>
+                <span>{eachItem?.productName}</span>
               </div>
               <div>
                 <b>ID: </b>
-                <span>{eachItem._id}</span>
+                <span>{eachItem?._id}</span>
               </div>
               <div className="productcolor"></div>
               <div>
-                <b>SIZE: </b> <span>{eachItem.size}</span>
+                <b>SIZE: </b> <span>{eachItem?.size}</span>
               </div>
             </div>
 
@@ -105,7 +105,9 @@ function CheckOut() {
                     });
                   }}
                 />
-                <div className="quantity">{cartInfo[0].products[index].quantity}</div>
+                <div className="quantity">
+                  {cartInfo[0] && cartInfo[0]?.products[index]?.quantity}
+                </div>
                 <Add
                   className="iconCartPage"
                   onClick={() => {
@@ -116,7 +118,7 @@ function CheckOut() {
                 />
               </div>
               <div className="priceCartPage">
-                <h1>{eachItem.price} $</h1>
+               <h1>{eachItem?.price +"   " + "$"}</h1> 
               </div>
             </div>
           </div>
@@ -147,8 +149,8 @@ function CheckOut() {
         <div>
           <div className="yourCartBody">
             <div className="bodyLeft">
-              {cartItems?.map((eachItem,index) => {
-                return <EachCartProduct eachItem={eachItem} index={index}/>;
+              {cartItems?.map((eachItem, index) => {
+                return <EachCartProduct eachItem={eachItem} index={index} />;
               })}
             </div>
             <hr />

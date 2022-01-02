@@ -10,10 +10,15 @@ import { setCart } from "../../redux/cartRedux";
 import API from "../../API/api";
 import axios from "axios";
 import "./home.css";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 export default function Home() {
   const [AllProducts, setAllProducts] = useState([]);
+  const { userInfo } = useSelector((state) => state.user);
+  const { cartInfo } = useSelector((state) => state.cart);
+
+  // console.log(cartInfo);
+  // console.log("bearer "+userInfo?.accessToken);
   const dispatch=useDispatch()
 
   useEffect(() => {
@@ -27,22 +32,11 @@ export default function Home() {
       response.data && setAllProducts(response.data);
     };
 
-    const getCart=async()=>{
-      const response = await axios.get(API + "cart/find/61b0a0f51340af4c2c2689e8", {
-        headers: {
-          token:
-            "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWIwYTBmNTEzNDBhZjRjMmMyNjg5ZTgiLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNjQwOTg1ODM4LCJleHAiOjE2NzI1MjE4Mzh9.OgKbDeL1D2WPYNFVCYG2X3i7v7LtlJyjyAAICbOWREU",
-        },
-      }
-      
-      );
-      dispatch(setCart(response.data));
-    }
-    getCart();
+    
     getAllProducts();
   }, []);
 
-  console.log(AllProducts);
+  // console.log(AllProducts);
 
   // console.log(API);
   return (

@@ -200,7 +200,7 @@
     }
 
 
-  
+
     .addtoCartSection {
         display: none;
     }
@@ -212,18 +212,19 @@
 
     .addtoCartButtonForMobile {
         display: block;
-        width: 80%;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
         justify-content: center;
     }
 
     .addtoCartButtonForMobile button {
-        margin-top: 30px;
-        /* margin-left: 30px; */
+        margin-top: 20px;
         background-color: black;
         color: #fff;
         font-size: 21.5px;
-        width: 300px;
-        height: 40px;
+        width: 100%;
+        height: 50px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -231,7 +232,15 @@
         border: none;
         outline: none;
         cursor: pointer;
+        /* padding: 20px 0; */
         /* display: block; */
+
+    }
+
+    .quantitySectionMobile {
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
 
     }
 

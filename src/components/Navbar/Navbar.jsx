@@ -14,9 +14,10 @@ import {useSelector} from "react-redux"
 function Navbar() {
   const [size, setsize] = useState("");
   const {cartInfo}=useSelector(state=>state.cart)
+  const {isLoggedIn}=useSelector(state=>state.user)
   const [anchorEl, setAnchorEl] = React.useState(null);
 
-  // console.log(cartInfo[0].products)
+  console.log()
   const handleSize = (e) => {
     setsize(e.target.innerText);
   };
@@ -51,7 +52,7 @@ function Navbar() {
         </Link>
         <Link to="/checkout" style={{ textDecoration: "none" }}>
           <div className="navRightComp CartComponent">
-            <div className="badge">{cartInfo[0]?.products.length}</div>
+           {isLoggedIn && <div className="badge">{cartInfo && cartInfo[0].products?.length}</div>}
             <ShoppingCartIcon className="cartIcon" />
           </div>
         </Link>
